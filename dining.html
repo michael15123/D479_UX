@@ -1,0 +1,206 @@
+<!-- dining.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taniti - Dining</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo-area">
+        <img src="imgs/logo.png" alt="Taniti Logo">
+        <h2>Taniti</h2>
+    </div>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dining.html" class="active-page">Dining</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="activities.html">Activities</a>
+        <a href="transportation.html">Transportation</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+</header>
+
+<main>
+    <section class="restaurant-section">
+        <div class="restaurant-info">
+            <h2>Restaurants</h2>
+            <p>
+                Taniti currently has 10 restaurants: five serve mostly local fish and rice,
+                three serve American-style meals, and two serve Pan-Asian cuisine.
+            </p>
+        </div>
+
+        <div class="restaurant-carousel">
+            <button class="carousel-btn">&lt;</button>
+
+            <div class="restaurant-cards">
+                <article class="restaurant-card">
+                    <h3>Island Grill</h3>
+                    <p>Fresh-caught fish grilled daily and served with traditional 
+                        rice dishes and island vegetables. A favorite among visitors 
+                        looking for authentic Tanitian cuisine</p>
+                    <span class="restaurant-type">Local fish and rice</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <h3>Coconut Harbor Kitchen</h3>
+                    <p>Located near Yellow Leaf Bay, Coconut Harbor Kitchen serves 
+                        seafood platters, coconut rice, and local fruit specialties 
+                        with waterfront views</p>
+                    <span class="restaurant-type">Local fish and rice</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <h3>Volcano View Restaurant</h3>
+                    <p>A family-owned restaurant known for grilled mahi-mahi, rice bowls, 
+                        and traditional island recipes passed down through generations</p>
+                    <span class="restaurant-type">Local fish and rice</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <h3>Fisherman's Wharf Café</h3>
+                    <p>Fresh seafood arrives daily from local fishing boats. Popular menu 
+                        items include fish tacos, rice bowls, and tropical fruit desserts</p>
+                    <span class="restaurant-type">Local fish and rice</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <h3>Sunset Reef Dining</h3>
+                    <p>Local fish and rice</p>
+                    <p>Casual beachfront dining featuring local fish, shrimp dishes, rice specialties, 
+                        and beautiful sunset views over the Pacific</p>
+                    <span class="restaurant-type">Local fish and rice</span>
+                </article>
+
+
+
+
+
+                <article class="restaurant-card">
+                    <h3>Harbor Cafe</h3>
+                    <p>Offers classic American breakfasts, burgers, sandwiches, and milkshakes. 
+                        Popular with families and cruise ship visitors</p>
+                    <span class="restaurant-type">American</span>
+                </article>
+                
+                <article class="restaurant-card">
+                    <h3>Island Burger Company</h3>
+                    <p>Known for handcrafted burgers, fries, grilled chicken sandwiches, and 
+                        locally inspired specialty burgers</p>
+                    <span class="restaurant-type">American</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <h3>Palm Tree Diner</h3>
+                    <p>A casual diner serving breakfast all day, comfort food favorites, and 
+                        homemade desserts in a relaxed atmosphere</p>
+                    <span class="restaurant-type">American</span>
+                </article>
+
+
+
+
+                <article class="restaurant-card">
+                    <h3>Ocean Wok</h3>
+                    <p>Features stir-fry dishes, noodle bowls, curries, and fresh seafood inspired 
+                        by cuisines from across Asia</p>
+                    <span class="restaurant-type">Local Fish & Rice</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <h3>Bamboo Garden</h3>
+                    <p>A modern restaurant offering sushi rolls, rice dishes, dumplings, and 
+                        traditional Asian-inspired flavors using local ingredients</p>
+                    <span class="restaurant-type">Local Fish & Rice</span>
+                </article>
+
+            </div>
+
+            <button class="carousel-btn">&gt;</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="homepage-content">
+            <div class="homepage-card">
+                <img src="imgs/supermarket.png" alt="Island Supermarket">
+                <h3>Island Supermarket</h3>
+                <p>Large grocery store with food, drinks, travel basics, and household items.</p>
+            </div>
+
+            <div class="homepage-card">
+                <img src="imgs/supermarket.png" alt="Baymart Supermarket">
+                <h3>Baymart Supermarket</h3>
+                <p>Full-service supermarket near the bay with fresh produce and daily essentials.</p>
+            </div>
+
+            <div class="homepage-card">
+                <img src="imgs/grocery_store.png" alt="Taniti Market">
+                <h3>Taniti Market</h3>
+                <p>Small local grocery store offering snacks, fresh goods, and island favorites.</p>
+            </div>
+
+            <div class="homepage-card">
+                <img src="imgs/grocery_store.png" alt="Village Grocery">
+                <h3>Village Grocery</h3>
+                <p>Neighborhood grocery store for quick shopping and everyday supplies.</p>
+            </div>
+
+            <div class="homepage-card">
+                <img src="imgs/open_24.png" alt="Harbor Convenience">
+                <h3>Harbor Convenience</h3>
+                <p>Open 24 hours for late-night snacks, drinks, and basic travel needs.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Taniti Tourism</p>
+</footer>
+
+<script>
+
+    const cards = document.querySelectorAll(".restaurant-card");
+    const prevBtn = document.querySelector(".carousel-btn:first-of-type");
+    const nextBtn = document.querySelector(".carousel-btn:last-of-type");
+
+    let currentIndex = 0;
+    const visibleCards = 5;
+
+    function updateCarousel() {
+        cards.forEach((card, index) => {
+            card.style.display =
+                index >= currentIndex &&
+                index < currentIndex + visibleCards
+                    ? "block"
+                    : "none";
+        });
+    }
+
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < cards.length - visibleCards) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    updateCarousel();
+
+</script>
+
+</body>
+</html>
